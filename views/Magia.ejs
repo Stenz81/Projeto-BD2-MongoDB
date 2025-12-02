@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= magia.nome %> - RPG</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+<body>
+  <main>
+    <h1 id="nome_magia"><%= magia.nome %></h1>
+
+    <h3 class="subtitle">
+  <span class="crencas">
+    <%= crencas.join(" ou ") %> -
+  </span>
+  <span class="formas">
+    <%= formas_de_combate.join(" ou ") %>
+  </span>
+    </h3>
+
+    <!-- Aqui você pode exibir outros atributos -->
+    <p><strong>Nível base:</strong> <%= magia.nivel_base %> (Potência Arcana: <%= magia.nivel_base == 1 ? 1 : (1 + Math.floor(magia.nivel_base / 3)) %>)</p>
+    <div class="container" id="container1"><p style="text-align: justify; white-space: pre-wrap;"><%= magia.descricao %></p></div>
+    <div class="container" id="container2"><p style="text-align: justify;">
+    <strong>Custo:</strong>
+        <%= magia.custo_inicial %> E.h, <% if (magia.custo_por_rodada) { %>, <%= magia.custo_por_rodada %> E.h por rodada <% } %>, <%= magia.custo_acao%>
+    </p>
+    <p style="text-align: justify;">Nível: <%= magia.escalonamento %></p>
+    </div>
+    
+  </main>
+
+</body>
+</html>

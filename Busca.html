@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Busca por Magia - RPG</title>
+</head>
+
+<body>
+    <main>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">   
+        <div class="container" id="container1">
+            <input type="number" id="nivel_inferior" name="Nível inferior" placeholder= "Nível inferior">
+            <input type="text" id="nome_busca" name="Nome Busca" placeholder= "-- nome da magia buscada --" style="width:300px;">
+            <input type="number" id="nivel_superior" name="Nível superior" placeholder= "Nível superior">
+        </div>
+        <div class="center-container" id="container_box">
+            <div class="combo-box">
+            <div class="input-box" id="comboInput" tabindex="0">
+                <span class="placeholder">--Selecione 0 a x Crenças--</span>
+            </div>
+            <ul id="optionsList">
+                <li data-value="Religião">Religião</li>
+                <li data-value="Justiça">Justiça</li>
+                <li data-value="Natureza">Natureza</li>
+                <li data-value="Ciência">Ciência</li>
+                <li data-value="Alquimia">Alquimia</li>
+                <li data-value="Ocultismo">Ocultismo</li>
+                <li data-value="Anima">Anima</li>
+                <li data-value="Espírito">Espírito</li>
+                <li data-value="Emoção">Emoção</li>
+            </ul> 
+        </div>
+            <div class="combo-box">        
+            <div class="input-box" id="comboInputFC" tabindex="0">
+                <span class="placeholder">--Selecione 0 a 2 Formas de Combate--</span>
+            </div>
+            <ul id="optionsListFC">
+                <li data-value="AoE">AoE</li>
+                <li data-value="Armadilha">Armadilha</li>
+                <li data-value="Cura">Cura</li>
+                <li data-value="Dano Físico">Dano Físico</li>
+                <li data-value="Dano Mágico">Dano Mágico</li>
+                <li data-value="Debuff">Debuff</li>
+                <li data-value="Invocação">Invocação</li>
+                <li data-value="Suporte">Suporte</li>
+                <li data-value="Tank">Tank</li>
+            </ul>
+            
+        </div>  
+        </div>
+        <div class="center-container" id="container_box"></div>
+        <div>
+            <input type="button" id="Clear_button" name="Clear_button" value="Limpar Busca">
+            <script src="/js/clearSearch.js"></script>
+        </div>
+        <div>
+            <input type="button" id="Confirm_button" name="Confirm_button" value="Buscar">
+            <script src="/js/SelectSpell.js"></script>
+        </div>
+        
+        <div class="container" id="container2" style="display: none;"></div>
+        
+        <a href="Insere.html">
+            <input type="button" id="Change_button" value="Inserir Magias">
+        </a>
+    </main>
+    <script src="/js/selectInput.js"></script>
+    <script>
+    // Cria os dois combos:
+        createComboBox('comboInput', 'optionsList', '--Selecione 0 a x Crenças--', 'selectedValues');
+        createComboBox('comboInputFC', 'optionsListFC', '--Selecione 0 a 2 Formas de Combate--', 'selectedValues1');
+    </script>
+
+</body>

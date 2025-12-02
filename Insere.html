@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Inserir Magia - RPG</title>
+</head>
+
+<body>
+    <main>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">   
+        <div class="container" id="container1">
+            <input type="text" id="nome_magia_unico" name="Nome_Magia_Unico" placeholder= "-- Insira o nome da magia e seus componentes --" style="width:400px;">
+            <input type="number" id="nivel_magia_unico" name="Nivel_Magia_Unico" placeholder= "-- Insira o nivel da magia (1 ou múltiplo de 3) --" style="width:200px;">
+        </div>
+        <div class="center-container" id="container_box">
+            <div class="combo-box">
+            <div class="input-box" id="comboInput" tabindex="0">
+                <span class="placeholder">--Selecione 2 Crenças--</span>
+            </div>
+            <ul id="optionsList">
+                <li data-value="Religião">Religião</li>
+                <li data-value="Justiça">Justiça</li>
+                <li data-value="Natureza">Natureza</li>
+                <li data-value="Ciência">Ciência</li>
+                <li data-value="Alquimia">Alquimia</li>
+                <li data-value="Ocultismo">Ocultismo</li>
+                <li data-value="Anima">Anima</li>
+                <li data-value="Espírito">Espírito</li>
+                <li data-value="Emoção">Emoção</li>
+            </ul>
+            
+            </div>
+            <div class="combo-box">        
+            <div class="input-box" id="comboInputFC" tabindex="0">
+                <span class="placeholder">--Selecione 2 Formas de Combate--</span>
+            </div>
+            <ul id="optionsListFC">
+                <li data-value="AoE">AoE</li>
+                <li data-value="Armadilha">Armadilha</li>
+                <li data-value="Cura">Cura</li>
+                <li data-value="Dano Físico">Dano Físico</li>
+                <li data-value="Dano Mágico">Dano Mágico</li>
+                <li data-value="Debuff">Debuff</li>
+                <li data-value="Invocação">Invocação</li>
+                <li data-value="Suporte">Suporte</li>
+                <li data-value="Tank">Tank</li>
+            </ul>
+            
+            </div>
+        </div>
+        <textarea id="descricao" name="descricao" rows="8" cols="85" placeholder=" -- Digite aqui a descrição de sua magia (incluindo distância!) --"></textarea>
+        <div class="container" id="container_custos">
+            <input type="number" id="custo_inicial_unico" name="Nome_Magia_Unico" placeholder= "-- Insira o custo inicial da magia --" style="width:200px;">
+            <input type="number" id="custo_rodada_unico" name="Nivel_Magia_Unico" placeholder= "-- Insira o custo por rodada/ativação (0 se não se tiver) --" style="width:200px;">
+            <input type="text" id="custo_acao_unico" name="Nivel_Magia_Unico" placeholder= "-- Insira o custo de ação --" style="width:200px;">
+        </div>
+        <textarea id="escalonamento" name="escalonamento" rows="6" cols="85" placeholder=" -- Digite aqui o escalonamento de sua magia, no geral um efeito X ocorre a 3 níveis com gasto de A E.h para essa melhora, e outro efeito Y com gasto B --"></textarea>
+        <div>
+            <input type="button" id="Confirm_button_single" name="Confirm_button_single" value="Inserir Uma Magia">
+        </div>
+        <div class="container" id="container_mult_insert">
+        <textarea id="multi_insert" name="multi_insert" rows="12" cols="85" placeholder=" Aqui você pode inserir VÁRIAS magias por vez! eles devem SEMPRE seguir o padrão: nome+componentes na primeira linha \n segunda linha com crença1 ou crença2 - forma de combate 1 ou forma de combate 2 \n terceira linha com Lvl (1 ou multiplo de 3) \n, bloco de descrição com a distancia, \n depois, linha com Custo: e o custo inicial, custo por rodada se tiver e custo em ação - entre ação, ação bônus, reação, 1 S, 2 S ou 1 S 1 P \n por fim, uma linha/bloco com Nível: e o escalonamento da magia "></textarea>
+        <div>
+            <input type="button" id="Confirm_button_mult" name="Confirm_button_mult" value="Inserir Várias Magias">
+        </div>
+        </div>
+        <div class="container" id="container_saida"></div>
+        <a href="/">
+            <input type="button" id="Change_button" value="Buscar Magias">
+        </a>
+    </main>
+    <script src="/js/selectInput.js"></script>
+    <script src="/js/insertSpell.js"></script>
+    <script>
+    // Cria os dois combos:
+        createComboBox('comboInput', 'optionsList', '--Selecione 0 a x Crenças--', 'selectedValuesInsert');
+        createComboBox('comboInputFC', 'optionsListFC', '--Selecione 0 a 2 Formas de Combate--', 'selectedValuesInsert1');
+    </script>
+
+</body>
